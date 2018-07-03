@@ -28,6 +28,7 @@ export: |
 
             files {
                 "src/x11_*",
+                "src/linux_*",
                 "src/xkb_unicode.c",
                 "src/posix_time.c",
                 "src/posix_thread.c",
