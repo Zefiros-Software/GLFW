@@ -32,7 +32,7 @@ export: |
 
             files {
                 "src/x11_*",
-                "xkb_unicode.c",
+                "src/xkb_unicode.c",
                 "src/posix_time.c",
                 "src/posix_thread.c",
                 "src/glx_context.c",
