@@ -30,7 +30,8 @@
 
 TEST(Test, Example)
 {
-    ASSERT_TRUE(glfwInit());
+    double seconds = glfwGetTime();
+    ASSERT_GE(seconds, 0);
 }
 
 int main(int argc, char **argv)
