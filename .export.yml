@@ -39,7 +39,7 @@ export: |
                 "src/egl_context.c"
             }
 
-        filter "system:osx"
+        filter "system:macosx"
 
             defines "_GLFW_COCOA"
 
