@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+version: '>0.9.0 || @head'
+export: |
+
+    project "GLM"
+        kind "StaticLib"
+
+        files {
+            "src/context.c",
+            "src/init.c",
+            "src/input.c",
+            "src/monitor.c",
+            "src/vulkan.c",
+            "src/window.c",
+            "src/osmesa_context.c"
+        }
+
+        filter "system:windows"
+
+            defines "_GLFW_WIN32"
+
+            files {
+                "src/win32_*",
+                "src/wgl_context.c",
+                "src/egl_context.c"
+            }
+
+        filter "system:linux"
+
+            defines "_GLFW_X11"
+
+            files {
+                "src/x11_*",
+                "xkb_unicode.c",
+                "src/posix_time.c",
+                "src/posix_thread.c",
+                "src/glx_context.c",
+                "src/egl_context.c"
+            }
+
+        filter "system:osx"
+
+            defines "_GLFW_COCOA"
+
+            files {
+                "src/cocoa_*",
+                "src/xkb_unicode.c",
+                "src/posix_thread.c",
+                "src/nsgl_context.m",
+                "src/egl_context.c"
+            }
+
+        filter {}
+
+        zpm.export [[
+            includedirs "include"
+            cppdialect "C++11"
+        ]]
+...
