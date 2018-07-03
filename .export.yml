@@ -73,6 +73,8 @@ export: |
 
                 defines "_GLFW_COCOA"
 
+                linkoptions "-ObjC -framework CoreFoundation -framework CoreVideo -framework IOKit -framework Cocoa"
+
             filter {}
         ]]
 ...
